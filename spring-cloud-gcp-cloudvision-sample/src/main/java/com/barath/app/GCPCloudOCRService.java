@@ -7,12 +7,14 @@ import com.google.cloud.vision.v1.Feature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cloud.gcp.vision.CloudVisionTemplate;
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.lang.invoke.MethodHandles;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class GCPCloudOCRService implements CloudOCRService {
 
     private static final Logger logger = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());

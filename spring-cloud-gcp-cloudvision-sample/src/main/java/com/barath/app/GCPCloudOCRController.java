@@ -25,19 +25,19 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.constraints.NotNull;
 
-@RestController
-public class CloudOCRController {
+@RestController(value="/gcp")
+public class GCPCloudOCRController {
 
     private static final Logger logger = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
     private final CloudOCRService cloudOCRService;
 
 
-    public CloudOCRController(CloudOCRService cloudOCRService) {
+    public GCPCloudOCRController(CloudOCRService cloudOCRService) {
         this.cloudOCRService= cloudOCRService;
     }
 
 
-    @PostMapping("/documentType/extractText")
+    @PostMapping(value="/documentType/extractText")
     public  List<String> extractTextByDocumentType(@RequestBody @NotNull  MultipartFile file) throws Exception {
 
         logger.info("extract text by document type is invoked with file name {}",file.getOriginalFilename());
